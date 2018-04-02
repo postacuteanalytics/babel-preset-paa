@@ -1,6 +1,6 @@
 {
 	"name": "@paa/babel-preset-paa",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Post Acute Analytics <dev@paanalytics.com>",
 	"license": {
 		"type": "MIT",
