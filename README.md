@@ -5,17 +5,28 @@ This project establishes a baseline [Babel](https://babeljs.io) configuration fo
 
 It is based on a slimmed down selection of the plugins and presets used by ReactJS, only tailored specifically to NodeJS applications instead of web browsers. It also lacks JSX support by default.
 
+## Configuration
+
+This preset can be found as an NPM package available from PAA's own [internal registry](https://verdaccio.postacute.io) (https://verdaccio.postacute.io). Before you can download and install it into a new NodeJS project, you'll need to configure NPM to pull the package from the internal registrt instead of the public NPM registry.
+
+To do this, ask someone for credentials to Verdaccio. Once you receive them, type the following command:
+```
+npm adduser --registry "https://verdaccio.postacute.io" --scope "@paa"
+```
+
+The command will ask you to associate a username, password, and email to the registry. Any package prefixed with the "@paa" scope will be pushed to/pulled from Verdaccio automatically.
+
 ## Installation
 
 Simply run the following in your project directory:
 ```
-npm install -D babel-preset-paa
+npm install -D @paa/babel-preset-paa
 ```
 
 This will install the relevant plugins needed for compilation. In order to enable the PAA preset by default, edit or create the `.babelrc` file in your project's root directory. It's contents should include the following at a bare minimum:
 ```
 {
-	presets: ["paa"]
+	presets: ["@paa/babel-preset-paa"]
 }
 ```
 
